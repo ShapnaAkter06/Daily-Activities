@@ -5,7 +5,7 @@ const MyInfo = () => {
     return (
         <div>
             <div className='my-info'>
-                <h2>My Information</h2>
+                <h3>My Information</h3>
                 <p>Shapna Chowdhury</p>
                 <p>Education: Masters</p>
                 <p>Hobby: Travelling</p>

@@ -1,0 +1,19 @@
+.reading-details{
+    box-shadow: 4px 4px 8px gray;
+    padding-bottom: 20px;
+}
+.reading-details p{
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.complete-btn{
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+}

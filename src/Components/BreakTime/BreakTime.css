@@ -1,0 +1,15 @@
+.break-btn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 8px gray;
+    padding-bottom: 20px;
+}
+.break-btn button{
+    padding: 10px 10px;
+    border: none;
+    border-radius: 50%;
+    margin: 3px;
+    box-shadow: 4px 4px 8px gray;;
+}

@@ -4,6 +4,8 @@ import { faCoffee, faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
 import './Home.css'
 import AllCards from '../All-Cards/AllCards';
 import MyInfo from '../MyInfo/MyInfo';
+import BreakTime from '../BreakTime/BreakTime';
+import ReadingDetails from '../ReadingDetails/ReadingDetails';
 
 const Home = () => {
     const [cards, setCards] = useState([]);
@@ -25,6 +27,12 @@ const Home = () => {
                 <div className="cards-info">
                     <div>
                         <MyInfo></MyInfo>
+                    </div>
+                    <div>
+                        <BreakTime></BreakTime>
+                    </div>
+                    <div>
+                        <ReadingDetails></ReadingDetails>
                     </div>
                 </div>
             </div>
