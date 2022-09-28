@@ -1,0 +1,10 @@
+.home-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.heading{
+    color: lightseagreen;
+}
+.icon{
+    margin-right: 10px;
+}
