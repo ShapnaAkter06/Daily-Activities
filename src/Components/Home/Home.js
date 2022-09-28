@@ -6,9 +6,12 @@ import AllCards from '../All-Cards/AllCards';
 import MyInfo from '../MyInfo/MyInfo';
 import BreakTime from '../BreakTime/BreakTime';
 import ReadingDetails from '../ReadingDetails/ReadingDetails';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
 const Home = () => {
     const [cards, setCards] = useState([]);
+    const [details, setDetails] = useState([]);
+    
     useEffect( ()=>{
         fetch('data.json')
         .then(res => res.json())
@@ -22,7 +25,11 @@ const Home = () => {
                         <FontAwesomeIcon className='icon' icon={faBookOpenReader}></FontAwesomeIcon>
                         Reading Books
                     </h1>
-                    <AllCards cards={cards}></AllCards>
+                    <AllCards 
+                        cards={cards}
+                        details={details}
+                        setDetails={setDetails}
+                    ></AllCards>
                 </div>
                 <div className="cards-info">
                     <div>
@@ -32,7 +39,7 @@ const Home = () => {
                         <BreakTime></BreakTime>
                     </div>
                     <div>
-                        <ReadingDetails></ReadingDetails>
+                        <ReadingDetails details={details}></ReadingDetails>
                     </div>
                 </div>
             </div>
