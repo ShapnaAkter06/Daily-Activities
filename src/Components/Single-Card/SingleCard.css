@@ -1,5 +1,6 @@
 .single-card{
     border: 1px solid gray;
+    box-shadow: 4px 4px 8px gray;
 }
 .card-image{
     width: 100%;

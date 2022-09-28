@@ -8,6 +8,9 @@
 .icon{
     margin-right: 10px;
 }
+.cards-info{
+    background-color: lightseagreen;
+}
 @media screen and (max-width: 700px) {
     .home-container{
         grid-template-columns: auto;

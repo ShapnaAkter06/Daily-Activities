@@ -1,0 +1,8 @@
+.my-info{
+    box-shadow: 4px 4px 8px gray;
+    padding: 10px;
+}
+.my-info p{
+    color: white;
+    font-weight: 600;
+}

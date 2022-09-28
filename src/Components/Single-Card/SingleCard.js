@@ -9,7 +9,7 @@ const SingleCard = ({card}) => {
             <div className="card-info">
                 <h5>Name : {card.name} </h5>
                 <p>Time: {card.time} min </p>
-                <button className='added-btn'>Added To list</button>
+                <button className='added-btn'>Add To list</button>
             </div>
         </div>
     );

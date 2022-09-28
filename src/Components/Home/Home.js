@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCoffee, faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
 import './Home.css'
 import AllCards from '../All-Cards/AllCards';
+import MyInfo from '../MyInfo/MyInfo';
 
 const Home = () => {
     const [cards, setCards] = useState([]);
@@ -21,8 +22,10 @@ const Home = () => {
                     </h1>
                     <AllCards cards={cards}></AllCards>
                 </div>
-                <div className="cards-details">
-                    <h1>right</h1>
+                <div className="cards-info">
+                    <div>
+                        <MyInfo></MyInfo>
+                    </div>
                 </div>
             </div>
         </div>
