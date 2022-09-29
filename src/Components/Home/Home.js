@@ -14,24 +14,28 @@ const Home = () => {
     const [breakTime, setBreakTime] = useState('0');
     const [localData, setLocalData] = useState('')
 
-    const addBreakTime =(brkTime) =>{
-        setBreakTime(brkTime.slice(0,2));
-        localStorage.setItem('breakTime', JSON.stringify(brkTime.slice(0,2)));
-    }
-    useEffect(()=> {
-        const y = localStorage.getItem('breakTime');
-        if(y){
-            setLocalData(JSON.parse(y))
-        }
-    }, [breakTime])
-
-    const x = details?.reduce((prevValue, currentValue)=> prevValue + currentValue, 0);
-    
+    // load data from json file
     useEffect( ()=>{
         fetch('data.json')
         .then(res => res.json())
         .then(data => setCards(data))
-    }, [])
+    }, [cards])
+
+    // calculation of total reading time
+    const readingTime = details?.reduce((prevValue, currentValue)=> prevValue + currentValue, 0);
+
+    // added break time in local storage
+    const addBreakTime =(breakInfo) =>{
+        setBreakTime(breakInfo.slice(0,2));
+        localStorage.setItem('breakTime', JSON.stringify(breakInfo.slice(0,2)));
+    }
+    useEffect(()=> {
+        const getBreakTime = localStorage.getItem('breakTime');
+        if(getBreakTime){
+            setLocalData(JSON.parse(getBreakTime))
+        }
+    }, [breakTime])
+
     return (
         <div>
             <div className="home-container">
@@ -54,7 +58,7 @@ const Home = () => {
                         <BreakTime addBreakTime={addBreakTime}></BreakTime>
                     </div>
                     <div>
-                        <ReadingDetails details={x} localData={localData}></ReadingDetails>
+                        <ReadingDetails details={readingTime} localData={localData}></ReadingDetails>
                     </div>
                 </div>
             </div>
