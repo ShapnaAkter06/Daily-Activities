@@ -1,12 +1,19 @@
 import React from 'react';
-import './SingleCard.css'
+import './SingleCard.css';
+import Swal from 'sweetalert2'
 
 const SingleCard = ({card, details, setDetails}) => {
     const {image, name, time} = card;
 
     const handleAddToList = (timeInfo) => {
         const newTime = [...details, timeInfo];
-        setDetails(newTime)
+        setDetails(newTime);
+        Swal.fire(
+            'Good job!',
+            'Added to list!',
+            'success'
+          )
+        
     }
     return (
         <div className='single-card'>
