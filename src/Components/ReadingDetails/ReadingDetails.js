@@ -13,9 +13,9 @@ const ReadingDetails = ({details, localData}) => {
     }
     return (
         <div>
-           <h3>Reading Details</h3>
+           <h3>Activities Details</h3>
            <div className='reading-details'>
-                <p>Reading Time:{details}</p>
+                <p>Activities Time:{details}</p>
                 <p>Break Time:{localData} </p>
            </div>
            <button onClick={activityCompleted} className='complete-btn'>Activity Completed</button>
