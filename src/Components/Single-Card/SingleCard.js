@@ -12,11 +12,10 @@ const SingleCard = ({card, details, setDetails}) => {
             'Good job!',
             'Added to list!',
             'success'
-          )
-        
+          )    
     }
     return (
-        <div className='single-card'>
+        <div className='single-card' data-aos="zoom-in">
             <img className='card-image' src={image} alt="" />
             <div className="card-info">
                 <h5>Name : {name} </h5>
