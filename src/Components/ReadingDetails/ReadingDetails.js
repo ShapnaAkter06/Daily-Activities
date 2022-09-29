@@ -1,7 +1,16 @@
 import React from 'react';
-import './ReadingDetails.css'
+import './ReadingDetails.css';
+import Swal from 'sweetalert2'
 
 const ReadingDetails = ({details}) => {
+
+    const activityCompleted = () =>{
+        Swal.fire(
+            'Good job!',
+            'You have completed!',
+            'success'
+          )          
+    }
     return (
         <div>
            <h3>Reading Details</h3>
@@ -9,7 +18,7 @@ const ReadingDetails = ({details}) => {
                 <p>Reading Time:{details.map(t=> t.time)}</p>
                 <p>Break Time: </p>
            </div>
-           <button className='complete-btn'>Activity Completed</button>
+           <button onClick={activityCompleted} className='complete-btn'>Activity Completed</button>
         </div>
     );
 };
