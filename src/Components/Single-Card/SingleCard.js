@@ -4,11 +4,8 @@ import './SingleCard.css'
 const SingleCard = ({card, details, setDetails}) => {
     const {image, name, time} = card;
 
-    const handleAddToList = () => {
-        const info = {
-            time,
-        }
-        const newTime = [...details, info];
+    const handleAddToList = (timeInfo) => {
+        const newTime = [...details, timeInfo];
         setDetails(newTime)
     }
     return (
@@ -17,7 +14,7 @@ const SingleCard = ({card, details, setDetails}) => {
             <div className="card-info">
                 <h5>Name : {name} </h5>
                 <p>Time: {time} min </p>
-                <button onClick={handleAddToList} className='added-btn'>Add To list</button>
+                <button onClick={()=>handleAddToList(time)} className='added-btn'>Add To list</button>
             </div>
         </div>
     );

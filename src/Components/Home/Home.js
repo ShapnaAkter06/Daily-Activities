@@ -11,6 +11,21 @@ import ReadingDetails from '../ReadingDetails/ReadingDetails';
 const Home = () => {
     const [cards, setCards] = useState([]);
     const [details, setDetails] = useState([]);
+    const [breakTime, setBreakTime] = useState('0');
+    const [localData, setLocalData] = useState('')
+
+    const addBreakTime =(brkTime) =>{
+        setBreakTime(brkTime.slice(0,2));
+        localStorage.setItem('breakTime', JSON.stringify(brkTime.slice(0,2)));
+    }
+    useEffect(()=> {
+        const y = localStorage.getItem('breakTime');
+        if(y){
+            setLocalData(JSON.parse(y))
+        }
+    }, [breakTime])
+
+    const x = details?.reduce((prevValue, currentValue)=> prevValue + currentValue, 0);
     
     useEffect( ()=>{
         fetch('data.json')
@@ -36,10 +51,10 @@ const Home = () => {
                         <MyInfo></MyInfo>
                     </div>
                     <div>
-                        <BreakTime></BreakTime>
+                        <BreakTime addBreakTime={addBreakTime}></BreakTime>
                     </div>
                     <div>
-                        <ReadingDetails details={details}></ReadingDetails>
+                        <ReadingDetails details={x} localData={localData}></ReadingDetails>
                     </div>
                 </div>
             </div>
