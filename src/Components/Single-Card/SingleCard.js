@@ -18,7 +18,7 @@ const SingleCard = ({card, details, setDetails}) => {
         <div className='single-card' data-aos="zoom-in">
             <img className='card-image' src={image} alt="" />
             <div className="card-info">
-                <h5>Name : {name} </h5>
+                <h4>{name} </h4>
                 <p>Time: {time} min </p>
                 <button onClick={()=>handleAddToList(time)} className='added-btn'>Add To list</button>
             </div>

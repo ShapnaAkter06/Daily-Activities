@@ -42,8 +42,9 @@ const Home = () => {
                 <div className="card-container">
                     <h1 className='heading'>
                         <FontAwesomeIcon className='icon' icon={faBookOpenReader}></FontAwesomeIcon>
-                        Reading Books
+                        Daily Activities
                     </h1>
+                    <p>Select Today's Activities</p>
                     <AllCards 
                         cards={cards}
                         details={details}
