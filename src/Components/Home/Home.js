@@ -19,7 +19,7 @@ const Home = () => {
         fetch('data.json')
         .then(res => res.json())
         .then(data => setCards(data))
-    }, [cards])
+    }, [])
 
     // calculation of total reading time
     const readingTime = details?.reduce((prevValue, currentValue)=> prevValue + currentValue, 0);
